@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "com.salesforce.csc.reportcollector-availability-watchdog.config-element",
+  "title": "Report Collector Availability Watchdog Configuration Element Schema",
+  "type": "object",
+  "properties": {
+    "doc": {
+      "description": "Human readable configuration element description",
+      "type": "string"
+    },
+    "type": {
+      "description": "Type of the configuration element. If specified, the environment variable value will be type casted.",
+      "type": "string",
+      "enum": [
+        "array",
+        "boolean",
+        "integer",
+        "string",
+        "other"
+      ]
+    },
+    "default": {
+      "description": "The default value of the configuration element.",
+      "type": [
+        "integer",
+        "string",
+        "boolean",
+        "array",
+        "null"
+      ]
+    },
+    "required": {
+      "description": "If set to true and there is no 'default' value specified, the environment variable must be present, otherwise it will result in a configuration error.",
+      "type": "boolean"
+    },
+    "transform": {
+      "description": "Function to be applied to the environment value string",
+      "type": {}
+    }
+  },
+  "required": [
+    "doc",
+    "type"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "envariability",
+  "version": "1.0.0",
+  "description": "Highly configurable Node.js environment variable based configuration library",
+  "main": "lib/environment-config.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --harmony --reporter spec \"test/**/*.js\"",
+    "posttest": "npm run lint",
+    "test:coverage": "istanbul cover --print none --report none --include-pid _mocha -- --check-leaks test/**/*.js && istanbul report text-summary lcov",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "clean": "rm -rf coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:salesforce/envariability.git"
+  },
+  "keywords": [
+    "environment",
+    "env",
+    "variable",
+    "config",
+    "configuration",
+    "12factor",
+    "tree",
+    "schema",
+    "nested",
+    "validation"
+  ],
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "jsonschema": "^1.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.12.0",
+    "eslint-config-google": "^0.9.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.3"
+  },
+  "eslintIgnore": [
+    "coverage/*"
+  ]
+}
